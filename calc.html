@@ -322,12 +322,12 @@
                         if (rpm == 3000) {
                             table += "<tr><th class='table-primary'>" + rpm + "</th>";
                         }
-                            else if (rpm == 6500) {
-                                table += "<tr><th class='table-danger'>" + rpm + "</th>";
-                            }
-                            else{
-                        table += "<tr><th>" + rpm + "</th>";
-                            }
+                        else if (rpm == 6500) {
+                            table += "<tr><th class='table-danger'>" + rpm + "</th>";
+                        }
+                        else {
+                            table += "<tr><th>" + rpm + "</th>";
+                        }
                         for (i = 0; i < gear.length; i++) {
                             if (i > 5) {
                                 if (rpm == 3000) {
@@ -353,22 +353,22 @@
                             else {
                                 if (rpm == 3000) {
                                     if (Number.isFinite(gear[i]) && gear[i] != 0) {
-                                        table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                        table += "<td class='table-primary'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
                                     }
                                     else { table += "<td class='table-primary'>0</td>" }
                                 }
                                 else if (rpm == 6500) {
                                     if (Number.isFinite(gear[i]) && gear[i] != 0) {
-                                        table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                        table += "<td class='table-danger'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
                                     }
                                     else { table += "<td class='table-danger'>0</td>" }
                                 }
                                 else {
-                                if (Number.isFinite(gear[i]) && gear[i] != 0) {
-                                    table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                    if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                        table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                    }
+                                    else { table += "<td class='table-info'>0</td>" }
                                 }
-                                else { table += "<td class='table-info'>0</td>" }
-                            }
                             }
                         }
                         table += "</tr>";
