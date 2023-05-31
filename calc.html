@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Расчет кпп</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <style>
+        @media (max-width: 575.98px) {
+            .col {
+                flex: unset;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4">Расчет КПП</span></span>
+
+            </a>
+
+
+
+        </header>
+    </div>
+    <div class="container">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        КПП №1
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <div class="container">
+
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <p class="text-center">Параметры колеса:</p>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="width" class="form-label">Ширина шины</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="width">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="height" class="form-label">Высота профиля</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="height">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="dia" class="form-label">Диаметр диска</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="dia">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="form-check form-switch">
+
+                                            <label class="form-check-label" for="flexSwitchCheckDefault">
+                                                Колеса одинаковые</label>
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="flexSwitchCheckDefault">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+                                    <div class="row ">
+                                        <p class="text-center">Параметры кпп:</p>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="main" class="col-form-label">главная пара</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="main">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="one" class="col-form-label">1-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="one">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="two" class="col-form-label">2-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="two">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="three" class="col-form-label">3-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="three">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="four" class="col-form-label">4-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="four">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="five" class="col-form-label">5-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="five">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="six" class="col-form-label">6-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="six">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        КПП №2
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <div class="container">
+
+                            <div class="row align-items-start">
+                                <div class="col">
+                                    <p class="text-center">Параметры колеса:</p>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="width2" class="form-label">Ширина шины</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="width2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="height2" class="form-label">Высота профиля</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="height2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="dia2" class="form-label">Диаметр диска</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="dia2">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col">
+                                    <div class="row ">
+                                        <p class="text-center">Параметры кпп:</p>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="main2" class="col-form-label">главная пара</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="main2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="one2" class="col-form-label">1-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="one2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="two2" class="col-form-label">2-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="two2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="three2" class="col-form-label">3-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="three2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="four2" class="col-form-label">4-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="four2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="five2" class="col-form-label">5-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="five2">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-5">
+                                            <label for="six2" class="col-form-label">6-я передача</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="six2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mb-3">
+            <button onclick="calc()" class="btn btn-primary">расчитать</button>
+        </div>
+
+
+    </div>
+    <div class="container">
+        <div class="row mb-3">
+
+            <div id="res"></div>
+            <script>
+                function calc() {
+                    var width = document.getElementById("width").value * 1;
+                    var height = document.getElementById("height").value * 1;
+                    var dia = document.getElementById("dia").value * 1;
+                    var wheel = ((width * height / 100) * 2 + dia * 25.4);
+
+                    var width2 = document.getElementById("width2").value * 1;
+                    var height2 = document.getElementById("height2").value * 1;
+                    var dia2 = document.getElementById("dia2").value * 1;
+                    var wheel2 = ((width2 * height2 / 100) * 2 + dia * 25.4);
+
+                    table(wheel, wheel2);
+                }
+
+                function table(wheel, wheel2) {
+
+                    var main = document.getElementById("main").value * 1;
+                    var one = document.getElementById("one").value * 1;
+                    var two = document.getElementById("two").value * 1;
+                    var three = document.getElementById("three").value * 1;
+                    var four = document.getElementById("four").value * 1;
+                    var five = document.getElementById("five").value * 1;
+                    var six = document.getElementById("six").value * 1;
+
+                    var main2 = document.getElementById("main2").value * 1;
+                    var one2 = document.getElementById("one2").value * 1;
+                    var two2 = document.getElementById("two2").value * 1;
+                    var three2 = document.getElementById("three2").value * 1;
+                    var four2 = document.getElementById("four2").value * 1;
+                    var five2 = document.getElementById("five2").value * 1;
+                    var six2 = document.getElementById("six2").value * 1;
+                    let gear = [one, two, three, four, five, six, one2, two2, three2, four2, five2, six2];
+                    var rpm = 0;
+                    var speed = 0;
+                    res.innerHTML = ""
+                    var table = "<table class='table table-sm table-bordered'>";
+                    table += "<tr><td></td><th colspan=6 class='table-info'>КПП 1</th><th colspan=6 class='table-success'>КПП 2</th></tr>"
+                    table += "<tr><th>об/мин</th><th class='table-info'>1</th><th class='table-info'>2</th><th class='table-info'>3</th><th class='table-info'>4</th><th class='table-info'>5</th><th class='table-info'>6</th><th class='table-success'>1</th><th class='table-success'>2</th><th class='table-success'>3</th><th class='table-success'>4</th><th class='table-success'>5</th><th class='table-success'>6</th></tr>";
+
+                    for (rpm = 500; rpm <= 9000; rpm = rpm + 500) {
+                        table += "<tr><th>" + rpm + "</th>";
+                        for (i = 0; i < gear.length; i++) {
+                            if (i > 5) {
+                                if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                    table += "<td class='table-success'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                }
+                                else { table += "<td class='table-success'>0</td>" }
+                            }
+                            else {
+                                if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                    table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                }
+                                else { table += "<td class='table-info'>0</td>" }
+                            }
+                        }
+                        table += "</tr>";
+                    }
+                    table += "</table>";
+                    res.innerHTML = table;
+
+                }
+
+            </script>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
