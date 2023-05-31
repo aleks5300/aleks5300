@@ -79,8 +79,7 @@
 
                                             <label class="form-check-label" for="equale">
                                                 Колеса одинаковые</label>
-                                            <input class="form-check-input" type="checkbox" role="switch"
-                                                id="equale">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="equale">
                                         </div>
                                     </div>
 
@@ -278,19 +277,18 @@
                     var dia = document.getElementById("dia").value * 1;
                     var wheel = ((width * height / 100) * 2 + dia * 25.4);
 
-                    
-                    if(document.getElementById("equale").checked)
-                    {
-                        var wheel2=wheel;
-                        document.getElementById("width2").value=width;
-                        document.getElementById("height2").value=height;
-                        document.getElementById("dia2").value=dia;
+
+                    if (document.getElementById("equale").checked) {
+                        var wheel2 = wheel;
+                        document.getElementById("width2").value = width;
+                        document.getElementById("height2").value = height;
+                        document.getElementById("dia2").value = dia;
                     }
-                    else{
-                    var width2 = document.getElementById("width2").value * 1;
-                    var height2 = document.getElementById("height2").value * 1;
-                    var dia2 = document.getElementById("dia2").value * 1;
-                    var wheel2 = ((width2 * height2 / 100) * 2 + dia * 25.4);
+                    else {
+                        var width2 = document.getElementById("width2").value * 1;
+                        var height2 = document.getElementById("height2").value * 1;
+                        var dia2 = document.getElementById("dia2").value * 1;
+                        var wheel2 = ((width2 * height2 / 100) * 2 + dia * 25.4);
                     }
                     table(wheel, wheel2);
                 }
@@ -317,23 +315,60 @@
                     var speed = 0;
                     res.innerHTML = ""
                     var table = "<table class='table table-sm table-bordered'>";
-                    table += "<tr><td></td><th colspan=6 class='table-info'>КПП 1</th><th colspan=6 class='table-success'>КПП 2</th></tr>"
-                    table += "<tr><th>об/мин</th><th class='table-info'>1</th><th class='table-info'>2</th><th class='table-info'>3</th><th class='table-info'>4</th><th class='table-info'>5</th><th class='table-info'>6</th><th class='table-success'>1</th><th class='table-success'>2</th><th class='table-success'>3</th><th class='table-success'>4</th><th class='table-success'>5</th><th class='table-success'>6</th></tr>";
+                    table += "<tr><th rowspan=2>об/мин</th><th colspan=6 class='table-info'>КПП 1</th><th colspan=6 class='table-success'>КПП 2</th></tr>"
+                    table += "<tr><th class='table-info'>1</th><th class='table-info'>2</th><th class='table-info'>3</th><th class='table-info'>4</th><th class='table-info'>5</th><th class='table-info'>6</th><th class='table-success'>1</th><th class='table-success'>2</th><th class='table-success'>3</th><th class='table-success'>4</th><th class='table-success'>5</th><th class='table-success'>6</th></tr>";
 
                     for (rpm = 500; rpm <= 9000; rpm = rpm + 500) {
+                        if (rpm == 3000) {
+                            table += "<tr><th class='table-primary'>" + rpm + "</th>";
+                        }
+                            else if (rpm == 6500) {
+                                table += "<tr><th class='table-danger'>" + rpm + "</th>";
+                            }
+                            else{
                         table += "<tr><th>" + rpm + "</th>";
+                            }
                         for (i = 0; i < gear.length; i++) {
                             if (i > 5) {
-                                if (Number.isFinite(gear[i]) && gear[i] != 0) {
-                                    table += "<td class='table-success'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                if (rpm == 3000) {
+                                    if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                        table += "<td class='table-primary'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                    }
+                                    else { table += "<td class='table-primary'>0</td>" }
                                 }
-                                else { table += "<td class='table-success'>0</td>" }
+                                else if (rpm == 6500) {
+                                    if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                        table += "<td class='table-danger'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                    }
+                                    else { table += "<td class='table-danger'>0</td>" }
+                                }
+                                else {
+                                    if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                        table += "<td class='table-success'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                    }
+                                    else { table += "<td class='table-success'>0</td>" }
+                                }
+
                             }
                             else {
+                                if (rpm == 3000) {
+                                    if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                        table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                    }
+                                    else { table += "<td class='table-primary'>0</td>" }
+                                }
+                                else if (rpm == 6500) {
+                                    if (Number.isFinite(gear[i]) && gear[i] != 0) {
+                                        table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                    }
+                                    else { table += "<td class='table-danger'>0</td>" }
+                                }
+                                else {
                                 if (Number.isFinite(gear[i]) && gear[i] != 0) {
                                     table += "<td class='table-info'>" + ((rpm / main / gear[i]) * 60 * (wheel * Math.PI / 1000000)).toFixed(1) + "</td>";
                                 }
                                 else { table += "<td class='table-info'>0</td>" }
+                            }
                             }
                         }
                         table += "</tr>";
