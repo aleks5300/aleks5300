@@ -332,19 +332,19 @@
                             if (i > 5) {
                                 if (rpm == 3000) {
                                     if (Number.isFinite(gear[i]) && gear[i] != 0) {
-                                        table += "<td class='table-primary'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                        table += "<td class='table-primary'>" + ((rpm / main2 / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
                                     }
                                     else { table += "<td class='table-primary'>0</td>" }
                                 }
                                 else if (rpm == 6500) {
                                     if (Number.isFinite(gear[i]) && gear[i] != 0) {
-                                        table += "<td class='table-danger'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                        table += "<td class='table-danger'>" + ((rpm / main2 / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
                                     }
                                     else { table += "<td class='table-danger'>0</td>" }
                                 }
                                 else {
                                     if (Number.isFinite(gear[i]) && gear[i] != 0) {
-                                        table += "<td class='table-success'>" + ((rpm / main / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
+                                        table += "<td class='table-success'>" + ((rpm / main2 / gear[i]) * 60 * (wheel2 * Math.PI / 1000000)).toFixed(1) + "</td>";
                                     }
                                     else { table += "<td class='table-success'>0</td>" }
                                 }
